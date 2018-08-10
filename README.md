@@ -1,6 +1,6 @@
 ## Computes genomic relationship matrices as used in Bellot et al., 2018, Genetics, in press
 
-## File dogrm.f90
+## dogrm.f90
 Computes genomic relationship matrices
 
 To compile
@@ -19,10 +19,12 @@ To run
    maf: minimum allele frequency required [1e-6]
 
 To compute additive matrix
+
    cat genotype_file | ./dogrm -nind Nind > add.G
 
 To compute dominance matrix (Vitezica et al 2013)
+
    cat genotype_file | ./dogrm -nind Nind -dom > dom.G
 
-## File dobglr.R
+## dobglr.R
 R script to estimate variance components using BGLR (Perez & De Los Campos et al. 2014)
