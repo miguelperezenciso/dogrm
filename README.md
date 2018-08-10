@@ -2,7 +2,7 @@
 Computes genomic relationship matrices
 Used in Bellot et al., 2018, Genetics, in press
 
-# File gfortran.f0
+## File gfortran.f0
 Computes genomic relationship matrices
 
 To compile
@@ -25,5 +25,5 @@ To compute additive matrix
 To compute dominance matrix (Vitezica et al 2013)
    cat genotype_file | ./dogrm -nind Nind -dom > dom.G
 
-# File dobglr.R
+## File dobglr.R
 R script to estimate variance components using BGLR (Perez & De Los Campos et al. 2014)
