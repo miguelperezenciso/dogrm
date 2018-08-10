@@ -26,11 +26,11 @@ Computes genomic relationship matrices
 
 ### To compute additive matrix
 
-   cat genotype_file | ./dogrm -nind Nind > add.G
+   `cat genotype_file | ./dogrm -nind Nind > add.G`
 
 ### To compute dominance matrix (Vitezica et al 2013)
 
-   cat genotype_file | ./dogrm -nind Nind -dom > dom.G
+   `cat genotype_file | ./dogrm -nind Nind -dom > dom.G`
 
 ## dobglr.R
 R script to estimate variance components using BGLR (Perez & De Los Campos et al. 2014)
