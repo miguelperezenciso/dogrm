@@ -11,17 +11,17 @@ Computes genomic relationship matrices
 
    `cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-hap] [-maf maf]`
 
-- #### genotype_file #### contains, per row, the genotypes or alleles of all individuals. genotypes are coded 0,1,2 and alleles 0,1, space separated
+- genotype_file contains, per row, the genotypes or alleles of all individuals. genotypes are coded 0,1,2 and alleles 0,1, space separated
    
-   Nind: number of individuals
+- Nind: number of individuals
    
-   ploidy: ploidy [2]
+- ploidy: ploidy [2]
    
-   -dom: specifies whether dominance matrix is computed
+- -dom: specifies whether dominance matrix is computed
    
-   -hap specifies whether both alleles (0,1) are read (genotypes 0, 1, 2 read by default) 
+- -hap specifies whether both alleles (0,1) are read (genotypes 0, 1, 2 read by default) 
    
-   maf: minimum allele frequency required [1e-6]
+- maf: minimum allele frequency required [1e-6]
    
 
 ### To compute additive matrix
