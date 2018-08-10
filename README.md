@@ -1,6 +1,5 @@
 # dogrm
-Computes genomic relationship matrices
-Used in Bellot et al., 2018, Genetics, in press
+Computes genomic relationship matrices as used in Bellot et al., 2018, Genetics, in press
 
 ## File gfortran.f0
 Computes genomic relationship matrices
@@ -10,6 +9,7 @@ To compile
    gfortran dogrm.f90 -lblas -O4 -o dowgrm
 
 To run
+
    cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-hap] [-maf maf]
 
    genotype_file contains, per row, the genotypes or alleles of all individuals. genotypes are coded 0,1,2 and alleles 0,1, space separated
