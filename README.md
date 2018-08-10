@@ -5,7 +5,7 @@ Computes genomic relationship matrices
 
 ### To compile
 
-   gfortran dogrm.f90 -lblas -O4 -o dowgrm
+`gfortran dogrm.f90 -lblas -O4 -o dowgrm`
 
 ### To run
 
