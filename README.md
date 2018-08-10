@@ -1,7 +1,6 @@
-# dogrm
-Computes genomic relationship matrices as used in Bellot et al., 2018, Genetics, in press
+## Computes genomic relationship matrices as used in Bellot et al., 2018, Genetics, in press
 
-## File gfortran.f0
+## File dogrm.f90
 Computes genomic relationship matrices
 
 To compile
