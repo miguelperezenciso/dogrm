@@ -3,11 +3,11 @@
 ## dogrm.f90
 Computes genomic relationship matrices
 
-To compile
+###To compile
 
    gfortran dogrm.f90 -lblas -O4 -o dowgrm
 
-To run
+###To run
 
    cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-hap] [-maf maf]
 
@@ -24,11 +24,11 @@ To run
    maf: minimum allele frequency required [1e-6]
    
 
-To compute additive matrix
+###To compute additive matrix
 
    cat genotype_file | ./dogrm -nind Nind > add.G
 
-To compute dominance matrix (Vitezica et al 2013)
+###To compute dominance matrix (Vitezica et al 2013)
 
    cat genotype_file | ./dogrm -nind Nind -dom > dom.G
 
