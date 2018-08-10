@@ -12,8 +12,9 @@ To run
    cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-hap] [-maf maf]
 
    genotype_file contains, per row, the genotypes or alleles of all individuals. genotypes are coded 0,1,2 and alleles 0,1, space separated
-   Nind: number of individuals
-   ploidy: ploidy [2]
+   Nind: number of individuals\n
+   
+   ploidy: ploidy [2]\n
    -dom: specifies whether dominance matrix is computed
    -hap specifies whether both alleles (0,1) are read (genotypes 0, 1, 2 read by default) 
    maf: minimum allele frequency required [1e-6]
