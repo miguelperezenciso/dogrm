@@ -1,4 +1,5 @@
-## Computes genomic relationship and NRM matrices as used in Bellot et al., 2018, Can Deep Learning Improve Genomic Prediction of Complex Human Traits? GENETICS (https://doi.org/10.1534/genetics.118.301298)
+## Computes genomic relationship and NRM matrices 
+### as used in Bellot et al., 2018, Can Deep Learning Improve Genomic Prediction of Complex Human Traits? GENETICS (https://doi.org/10.1534/genetics.118.301298)
 
 ### dogrm.f90
 Computes genomic relationship matrices
