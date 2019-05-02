@@ -1,5 +1,6 @@
 ! gfortran dogrm.f90 -lblas -O4 -o dowgrm
-! cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-hap] [-maf maf]'
+! -hap option removed, polyploids allowed
+! cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf]'
 ! if -dom computes Vitezika's 2013 dominance variance 
 ! if -hap genotypes instead of alleles are assumed to be read, eg, 1 2 instead of 1 0 1 1
 program dogrm
@@ -19,8 +20,8 @@ do i=2, n
    select case (xc(i))
       case ('-dom')
         dom = .true.
-      case ('-hap')
-        hap = 1
+      !case ('-hap')
+      !  hap = 1
       case ('-nind')
         nind=x(i+1)
       case ('-maf')
@@ -29,7 +30,7 @@ do i=2, n
         ploidy = x(i+1)
    end select
 enddo
-if (hap /= 1) hap = ploidy
+hap = ploidy
 if (nind==0) &
    STOP 'Usage: cat genotype.txt | ./dogrm -nind nind [-maf maf] [-ploidy ploidy] [-dom] [-hap] > matrix.grm '
 if (dom .and. ploidy>2) STOP 'Dominance GRM defined only for diploids'
