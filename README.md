@@ -16,19 +16,17 @@ gfortran doA.f90 -O4 -o doa
 
 ### To run dowgrm
 
-   `cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-hap] [-maf maf]`
+   `cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf]`
 
-- genotype_file contains, per row, the genotypes or alleles of all individuals. genotypes are coded 0,1,2 and alleles 0,1, space separated
+- genotype_file contains, per row, all alleles per individual per SNP, 2 alleles for diploids, 4 for tetraploids, etc
    
 - Nind: number of individuals
    
-- ploidy: ploidy [2]
+- -ploidy: ploidy [2]
    
 - -dom: specifies whether dominance matrix is computed
    
-- -hap specifies whether both alleles (0,1) are read (genotypes 0, 1, 2 read by default) 
-   
-- maf: minimum allele frequency required [1e-6]
+- -maf: minimum allele frequency required [1e-6]
    
 
 1. To compute genomic additive matrix
