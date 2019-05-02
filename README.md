@@ -10,7 +10,7 @@ Computes numerator  relationship matrices and inverse
 ### To compile
 
 ```
-gfortran dogrm.f90 -lblas -O4 -o dowgrm
+gfortran dogrm.f90 -lblas -O4 -o dogrm
 gfortran doA.f90 -O4 -o doa
 ```
 
