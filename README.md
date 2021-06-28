@@ -30,8 +30,8 @@ gfortran doA.f90 -O4 -o doa
 
 - -maxmiss: max percentage of missing values [0] 
 
-**If `maxmiss` is set to a value larger than 0, missing values are replaced by mean frequency.** 
-markers with missing values are not used in computing dominance matrix
+**If `maxmiss` is set to a value larger than 0, missing values are replaced by mean frequency.
+markers with missing values are not used in computing dominance matrix **
 
 1. To compute genomic additive matrix
 
@@ -54,6 +54,13 @@ Plink ped files need to be transposed to run `dogrm` efficiently. The best way i
     `plink --file test --recode vcf --out test`
 
 produces a `test.vcf` file, which can be parsed as above. 
+
+### Files
+Examples to obtain add and dom matrices
+
+   `grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -nind 26 -maxmiss 0 > add.G
+    grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -dom -nind 26 -maxmiss 0 > dom.G `
+
    
 ### To run doa
 
