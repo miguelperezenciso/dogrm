@@ -30,8 +30,8 @@ gfortran doA.f90 -O4 -o doa
 
 - -maxmiss: max percentage of missing values [0] 
 
-**If `maxmiss` is set to a value larger than 0, missing values are replaced by mean frequency.
-markers with missing values are not used in computing dominance matrix **
+**If `maxmiss` is set to a value larger than 0, missing values are replaced by mean frequency.**
+**Markers with missing values are not used in computing dominance matrix. **
 
 1. To compute genomic additive matrix
 
