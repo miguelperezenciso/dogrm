@@ -42,8 +42,10 @@ If you have a vcf file, you can edit it as follows to feed `dogrm`
 
     `grep -v '#' plink.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -nind Nind > add.G`
 
+Here we replace missing genotypes (`.`) with ` 9`.
+
 ### Using plink ped files
-Plink ped files need to be transposed to run dogrm efficiently. The best way is to use `plink` utility
+Plink ped files need to be transposed to run `dogrm` efficiently. The best way is to use `plink` utility
 
     `plink --file test --recode vcf --out out`
    
