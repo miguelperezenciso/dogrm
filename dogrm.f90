@@ -1,17 +1,17 @@
-! gfortran dogrm.f90 -lblas -O4 -o dowgrm
+! gfortran dogrm.f90 -lblas -O4 -o dogrm
 ! -hap option removed, polyploids allowed
-! cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf]'
+! cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf] [-maxmiss maxmiss]'
 ! if -dom computes Vitezika's 2013 dominance variance 
 ! if -hap genotypes instead of alleles are assumed to be read, eg, 1 2 instead of 1 0 1 1
 program dogrm
 implicit none
 integer, parameter  :: nsnp_block=10000
 
-integer   :: i, j, n, ios, isnp, nind=0, ploidy=2, hap=2
+integer   :: i, j, n, ios, isnp, nind=0, nmiss, ploidy=2, hap=2
 real(SELECTED_REAL_KIND( 15, 307 )), allocatable :: grm(:,:), g(:,:), ig(:)
 real(SELECTED_REAL_KIND( 15, 307 ))  :: one=1.d0, freq, maf=1.d-6, grm_d
 character :: cmd*200, xc(10)*20
-real      :: x(size(xc))
+real      :: x(size(xc)), maxmiss=0.
 logical   :: dom = .false.
 
 call get_command (cmd)
@@ -26,6 +26,8 @@ do i=2, n
         nind=x(i+1)
       case ('-maf')
         maf=x(i+1)
+      case ('-maxmiss')
+        maxmiss = x(i+1)
       case ('-ploidy')
         ploidy = x(i+1)
    end select
@@ -44,8 +46,13 @@ if (.not. dom) then
    do
       read(*,*,iostat=ios) ig(:)
       if(ios.ne.0) EXIT
-      freq = sum(ig(:)) / (nind*ploidy)
+      !--> n missing, skip if larger than allowed
+      nmiss = count(ig>ploidy)
+      if (real(nmiss)/nind > maxmiss) CYCLE
+      freq = sum(pack(ig, ig<ploidy)) / ((nind-nmiss)*ploidy)
       if(min(freq,1.-freq) < maf) CYCLE
+      !--> replace miss with mean
+      where(ig>ploidy) ig=freq/ploidy
       isnp=isnp+1
       g(:,isnp) = ig
       !--> sum in ploidy chunks or in genotypes (hap=1)
@@ -66,6 +73,8 @@ else
    do
       read(*,*,iostat=ios) ig(:)
       if(ios.ne.0) EXIT
+      nmiss = count(ig>ploidy)
+      if (real(nmiss)/nind > 0) CYCLE
       freq = sum(ig(:)) / (nind*ploidy)
       if(min(freq,1.-freq) < maf) CYCLE
       isnp=isnp+1
