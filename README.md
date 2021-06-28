@@ -47,7 +47,9 @@ Here we replace missing genotypes (`.`) with ` 9`.
 ### Using plink ped files
 Plink ped files need to be transposed to run `dogrm` efficiently. The best way is to use `plink` utility
 
-    `plink --file test --recode vcf --out out`
+    `plink --file test --recode vcf --out test`
+
+produces a `test.vcf` file, which can be parsed as above. 
    
 ### To run doa
 
