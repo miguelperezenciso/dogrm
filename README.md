@@ -63,7 +63,8 @@ grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dog
 grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -dom -nind 26 -maxmiss 0 > dom.G 
 ```
    
-### To run doa
+### To run doA
+(I need to add an example pedigree file)
 
 1. Direct NRM
    `cat pedfile | ./doa -nind nind > add.nrm`
