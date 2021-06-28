@@ -16,7 +16,7 @@ gfortran doA.f90 -O4 -o doa
 
 ### To run dogrm
 
-   `cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf]`
+   `cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf] [-maxmiss pmiss]`
 
 - genotype_file contains, per row, all alleles per individual per SNP, 2 alleles for diploids, 4 for tetraploids, etc
    
@@ -27,6 +27,8 @@ gfortran doA.f90 -O4 -o doa
 - -dom: specifies whether dominance matrix is computed
    
 - -maf: minimum allele frequency required [1e-6]
+
+- -maxmiss: max percentage of missing values [0] 
    
 
 1. To compute genomic additive matrix
