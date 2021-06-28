@@ -58,9 +58,9 @@ produces a `test.vcf` file, which can be parsed as above.
 ### Files
 Examples to obtain add and dom matrices
 
-   `grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -nind 26 -maxmiss 0 > add.G
-    grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -dom -nind 26 -maxmiss 0 > dom.G `
-
+```grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -nind 26 -maxmiss 0 > add.G
+   grep -v '#' files/test.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -dom -nind 26 -maxmiss 0 > dom.G 
+```
    
 ### To run doa
 
