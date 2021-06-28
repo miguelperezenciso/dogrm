@@ -14,7 +14,7 @@ gfortran dogrm.f90 -lblas -O4 -o dogrm
 gfortran doA.f90 -O4 -o doa
 ```
 
-### To run dowgrm
+### To run dogrm
 
    `cat genotype_file | ./dogrm -nind Nind [-ploidy ploidy] [-dom] [-maf maf]`
 
@@ -36,6 +36,16 @@ gfortran doA.f90 -O4 -o doa
 2. To compute genomic dominance matrix (Vitezica et al 2013)
 
    `cat genotype_file | ./dogrm -nind Nind -dom > dom.G`
+   
+### Converting vcf into genotype files
+If you have a vcf file, you can edit it as follows to feed `dogrm`
+
+    `grep -v '#' plink.vcf | cut -f 10- | sed 's/\// /g'| sed 's/\./9/g' | ./dogrm -nind Nind > add.G`
+
+### Using plink ped files
+Plink ped files need to be transposed to run dogrm efficiently. The best way is to use `plink` utility
+
+    `plink --file test --recode vcf --out out`
    
 ### To run doa
 
