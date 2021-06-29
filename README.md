@@ -36,11 +36,11 @@ gfortran doA.f90 -O4 -o doa
 
 1. To compute genomic additive matrix
 
-    cat genotype_file | ./dogrm -nind Nind > add.G
+       cat genotype_file | ./dogrm -nind Nind > add.G
 
 2. To compute genomic dominance matrix (Vitezica et al 2013)
 
-    cat genotype_file | ./dogrm -nind Nind -dom > dom.G
+       cat genotype_file | ./dogrm -nind Nind -dom > dom.G
    
 ### Converting vcf into genotype files
 If you have a vcf file, you can edit it as follows to feed `dogrm`
