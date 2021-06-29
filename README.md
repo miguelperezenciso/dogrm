@@ -30,7 +30,7 @@ gfortran doA.f90 -O4 -o doa
 
 - -maxmiss: max percentage of missing values [0] 
 
-**If `maxmiss` is set to a value larger than 0, missing values are replaced by mean frequency.**
+**If `pmiss` is set to a value larger than 0, missing values are replaced by mean frequency.**
 
 **Markers with missing values are not used in computing dominance matrix.**
 
