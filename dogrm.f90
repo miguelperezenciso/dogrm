@@ -54,7 +54,7 @@ if (.not. dom) then
       !--> replace miss with mean
       where(ig>ploidy) ig=freq/ploidy
       isnp=isnp+1
-      g(:,isnp) = ig
+      !g(:,isnp) = ig
       !--> sum in ploidy chunks or in genotypes (hap=1)
       g(:,isnp) = (/(sum(ig(j:(j+hap-1))), j=1,nind*hap,hap)/)
       g(:,isnp) = g(:,isnp) - ploidy*freq
@@ -78,7 +78,7 @@ else
       freq = sum(ig(:)) / (nind*ploidy)
       if(min(freq,1.-freq) < maf) CYCLE
       isnp=isnp+1
-      g(:,isnp) = ig
+      !g(:,isnp) = ig
       !--> sum in ploidy chunks or in genotypes (hap=1)
       g(:,isnp) = (/(sum(ig(j:(j+hap-1))), j=1,nind*hap,hap)/)
 
